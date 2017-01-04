@@ -2,13 +2,23 @@
 <html>
 <head>
 	{% load staticfiles %}
-	<title></title>
-	}
+	<title>DEMO App</title>
+	
 </head>
 <body>
+<center>
 <h1> From Django</h1>
-	<a href="/app/next">Click</a>
-<img src="{%static 'Demo_app/images/home.png' %}" height="100%" width="100%">
+<!-- <img src="{%static 'Demo_app/images/home.png' %}" height="100%" width="100%"> -->
+	<hr><br>
+	<h2> Register </h2>
+	<br>
 
+	<form method='post'>{% csrf_token %}
+		<input type="text" name="name" placeholder="Name">
+		<br><input type="text" name="mail" placeholder="Mail">		
+		<br><br><input type="submit" value="send">
+	</form>
+
+</center>
 </body>
 </html>
