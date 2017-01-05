@@ -14,3 +14,6 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "DemoProject.settings")
 
 application = get_wsgi_application()
+
+sys.path.append('/Demo/DemoProject')
+# sys.path.append('/var/www/mysite')
