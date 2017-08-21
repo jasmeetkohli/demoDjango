@@ -1,1 +1,2 @@
-#####  Demo Django Project
+####### Demo Django Proj
+
