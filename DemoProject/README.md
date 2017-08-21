@@ -1,2 +1,1 @@
 ##### Demo Django Project
-
