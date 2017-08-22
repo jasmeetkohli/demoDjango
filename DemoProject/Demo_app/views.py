@@ -4,7 +4,6 @@ from django.views.generic import View
 from models import Customer
 
 class Index(View):
-
 	def get(self,request):
 		return render(request,'Demo_app/index.html')
 
