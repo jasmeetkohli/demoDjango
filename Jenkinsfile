@@ -1,12 +1,12 @@
-pipeline{
-  stages{
+pipeline {
+  stages {
     stage('Build'){
       sh 'echo "Build stage"'
     }
-     stage('Test'){
+     stage('Test') {
       sh 'echo "Test stage"'
     }
-     stage('Deploy'){
+     stage('Deploy') {
       sh 'echo "Deploy stage"'
     }
   }
