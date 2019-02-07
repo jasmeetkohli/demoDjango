@@ -1,4 +1,3 @@
-pipeline {
   stages {
     stage('Build'){
       sh 'echo "Build stage"'
@@ -10,4 +9,3 @@ pipeline {
       sh 'echo "Deploy stage"'
     }
   }
-}
