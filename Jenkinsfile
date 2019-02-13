@@ -1,4 +1,6 @@
-  stages {
+pipeline{
+ agent any
+ stages {
     stage('Build'){
       sh 'echo "Build stage"'
     }
@@ -9,3 +11,4 @@
       sh 'echo "Deploy stage"'
     }
   }
+}
