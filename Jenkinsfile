@@ -17,7 +17,7 @@ pipeline{
             steps{
                 sh '''
                     echo "BRANCH: ${env.BRANCH_NAME}"
-                    echo "BRANCH: ${BRANCH_NAME}
+                    echo "BRANCH: ${BRANCH_NAME}"
                     
                     echo "From DEV"
                     ls -aRl
