@@ -16,7 +16,7 @@ pipeline{
             //agent {label 'build_PROD'}
             steps{
                 sh '''
-                    echo "BRANCH: ${env.BRANCH_NAME}"
+                    echo "BRANCH: ${BRANCH_NAME}"
                     echo "############################################"
                     env
                     echo "From DEV"
