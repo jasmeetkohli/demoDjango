@@ -17,7 +17,6 @@ pipeline{
         namespace = 'kaarmana-dev'
     }
     stages{
-    
         stage("Build"){
             //agent {label 'build_PROD'}
             steps{
