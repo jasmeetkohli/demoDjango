@@ -1,5 +1,6 @@
 String cron_string = BRANCH_NAME == "dev" ? "*/1 * * * *" : ""
-
+application_name = "demo_2"
+some_var = application_name + "-test"
 pipeline{
     agent any
     triggers { pollSCM(cron_string) }
@@ -22,6 +23,7 @@ pipeline{
             steps{
                 sh '''
                     echo "application: ${application_name}"
+                    echo "some_var: ${some_var}"
                     echo "BRANCH: ${BRANCH_NAME}"
                     echo "############################################"
                     env
