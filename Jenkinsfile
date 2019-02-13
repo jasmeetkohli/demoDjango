@@ -1,7 +1,7 @@
 env.cron_string = BRANCH_NAME == "dev" ? "*/1 * * * *" : ""
 env.app = "test"
 env.app_name = "demo-" + app
-env.secret = credentials('secret_test1')
+env.secret = credentials('secret_test')
 env.some_var = application_name + "-test"
 
 pipeline{
@@ -19,6 +19,7 @@ pipeline{
     }  
     environment {
         namespace = 'kaarmana-dev'
+        secret_text = credentails('secret_test')
     }
     stages{
         stage("Build"){
@@ -30,6 +31,10 @@ pipeline{
                 sh '''
                     echo "${secret}"
                     echo "${secret}" > mysecret
+                    cat mysecret
+                    rm mysecret
+                    echo "${secret_text}"
+                    echo "${secret_text}" > mysecret
                     cat mysecret
                     rm mysecret
                     echo "application: ${application_name}"
