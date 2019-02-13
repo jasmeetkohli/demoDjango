@@ -2,7 +2,7 @@ String cron_string = BRANCH_NAME == "dev" ? "*/1 * * * *" : ""
 
 pipeline{
     agent any
-    triggers { cron(cron_string) }
+    triggers { pollSCM(cron_string) }
     /*parameters {
         choice(name: 'ENVIRONMENT', defaultValue: 'development', choices: ['development\nstaging\nproduction'])
         choice(name: 'APPLICATION', defaultValue: 'kaarmana-auth', choices: ['kaarmana-auth\nlotus-auth'])
