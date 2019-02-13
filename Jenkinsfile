@@ -1,8 +1,8 @@
-String cron_string = BRANCH_NAME == "dev" ? "*/1 * * * *" : ""
-app = "test"
-app_name = "demo-" + app
+env.cron_string = BRANCH_NAME == "dev" ? "*/1 * * * *" : ""
+env.app = "test"
+env.app_name = "demo-" + app
 
-String some_var = application_name + "-test"
+env.some_var = application_name + "-test"
 
 pipeline{
     agent any
@@ -19,8 +19,6 @@ pipeline{
     }  
     environment {
         namespace = 'kaarmana-dev'
-        app_name = app_name
-        some_var = some_var
     }
     stages{
         stage("Build"){
