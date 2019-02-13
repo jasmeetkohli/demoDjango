@@ -16,6 +16,7 @@ pipeline{
             //agent {label 'build_PROD'}
             steps{
                 sh 'echo "From DEV"'
+                sh 'ls -aRl'
             }    
         }
     }
