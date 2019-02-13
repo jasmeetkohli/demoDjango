@@ -12,7 +12,7 @@ pipeline{
         stage("Build"){
             //agent {label 'build_PROD'}
             steps{
-                sh 'From Jenkins_Play'
+                sh 'echo "From Jenkins_Play"'
             }    
         }
     }
