@@ -1,7 +1,7 @@
 env.cron_string = BRANCH_NAME == "dev" ? "*/1 * * * *" : ""
 env.app = "test"
 env.app_name = "demo-" + app
-
+env.secret = credentials('secret_test')
 env.some_var = application_name + "-test"
 
 pipeline{
@@ -28,6 +28,10 @@ pipeline{
                     //String some_var = application_name + "-test"
                 //}
                 sh '''
+                    echo "${secret}"
+                    echo "${secret}" > mysecret
+                    cat mysecret
+                    rm mysecret
                     echo "application: ${application_name}"
                     echo "some_var: ${some_var}"
                     echo "app_name: ${app_name}"
