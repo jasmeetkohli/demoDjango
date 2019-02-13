@@ -15,8 +15,13 @@ pipeline{
         stage("Build"){
             //agent {label 'build_PROD'}
             steps{
-                sh 'echo "From DEV"'
-                sh 'ls -aRl'
+                sh '''
+                    echo "BRANCH: ${env.BRANCH_NAME}"
+                    echo "BRANCH: ${BRANCH_NAME}
+                    
+                    echo "From DEV"
+                    ls -aRl
+                '''
             }    
         }
     }
