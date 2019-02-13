@@ -1,6 +1,6 @@
 String cron_string = BRANCH_NAME == "dev" ? "*/1 * * * *" : ""
-application_name = "demo_2"
-some_var = application_name + "-test"
+String application_name = "demo_2"
+String some_var = application_name + "-test"
 pipeline{
     agent any
     triggers { pollSCM(cron_string) }
