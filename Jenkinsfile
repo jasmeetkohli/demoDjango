@@ -19,7 +19,7 @@ pipeline{
     }  
     environment {
         namespace = 'kaarmana-dev'
-        secret_text = credentails('secret_test')
+        secret_text = credentials('secret_test')
     }
     stages{
         stage("Build"){
