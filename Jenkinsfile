@@ -1,14 +1,20 @@
 pipeline{
- agent any
- stages {
-    stage('Build'){
-      sh 'echo "Build stage"'
+    agent any
+    /*parameters {
+        choice(name: 'ENVIRONMENT', defaultValue: 'development', choices: ['development\nstaging\nproduction'])
+
+        choice(name: 'APPLICATION', defaultValue: 'kaarmana-auth', choices: ['kaarmana-auth\nlotus-auth'])
+    }*/
+    environment {
+        namespace = 'kaarmana-dev'
     }
-     stage('Test') {
-      sh 'echo "Test stage"'
+    stages{
+    
+        stage("Build"){
+            //agent {label 'build_PROD'}
+            steps{
+                sh 'From Master'
+            }    
+        }
     }
-     stage('Deploy') {
-      sh 'echo "Deploy stage"'
-    }
-  }
 }
