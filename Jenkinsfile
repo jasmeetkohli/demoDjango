@@ -1,6 +1,9 @@
 String cron_string = BRANCH_NAME == "dev" ? "*/1 * * * *" : ""
 app = "test"
 app_name = "demo-" + app
+
+String some_var = application_name + "-test"
+
 pipeline{
     agent any
     triggers { pollSCM(cron_string) }
@@ -16,14 +19,16 @@ pipeline{
     }  
     environment {
         namespace = 'kaarmana-dev'
+        app_name = app_name
+        some_var = some_var
     }
     stages{
         stage("Build"){
             //agent {label 'build_PROD'}
             steps{
-                script {
-                    String some_var = application_name + "-test"
-                }
+                //script {
+                    //String some_var = application_name + "-test"
+                //}
                 sh '''
                     echo "application: ${application_name}"
                     echo "some_var: ${some_var}"
