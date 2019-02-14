@@ -7,7 +7,7 @@ env.some_var = application_name + "-test"
 
 pipeline{
     agent any
-    triggers { pollSCM(cron_string) }
+    //triggers { pollSCM(cron_string) }
     /*parameters {
         choice(name: 'ENVIRONMENT', defaultValue: 'development', choices: ['development\nstaging\nproduction'])
         choice(name: 'APPLICATION', defaultValue: 'kaarmana-auth', choices: ['kaarmana-auth\nlotus-auth'])
