@@ -3,6 +3,7 @@ env.app = "test"
 env.secret_name = "secret_test"
 env.app_name = "demo-" + app
 //env.secret = credentials('secret_test')
+application_name = "demo" 
 env.some_var = application_name + "-test"
 
 pipeline{
